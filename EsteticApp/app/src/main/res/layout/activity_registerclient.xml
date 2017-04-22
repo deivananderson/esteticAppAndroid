@@ -2,39 +2,86 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="cosw.eci.edu.esteticapp.activities.LoginActivity">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="cosw.eci.edu.esteticapp.activities.RegisterClientActivity">
 
     <ScrollView
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
-            android:paddingLeft="14dp"
-            android:paddingRight="14dp">
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imageView5"
                 android:layout_width="match_parent"
-                android:layout_height="166dp"
+                android:layout_height="79dp"
                 app:srcCompat="@drawable/logoestetic" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageView4"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="25dp"
                 app:srcCompat="@drawable/eslogan" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/client"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="0.67"
+                        android:gravity="center"
+                        android:text="Client"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/colorPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/professional"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Professional"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
             <TextView
                 android:id="@+id/textView"
@@ -77,13 +124,13 @@
                 android:layout_height="20dp" />
 
             <Button
-                android:id="@+id/login"
+                android:id="@+id/register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="4.35"
                 android:background="@color/colorPrimaryDark"
                 android:shadowRadius="10"
-                android:text="Login"
+                android:text="Register"
                 android:textColor="@color/colorButton"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -93,16 +140,17 @@
                 android:layout_height="20dp" />
 
             <TextView
-                android:id="@+id/createAccount"
+                android:id="@+id/loginAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:clickable="true"
                 android:gravity="center"
                 android:onClick="createAccount"
-                android:text="No account yet? Create one"
+                android:text="Already a member? Login"
                 android:textColor="@color/colorAccent"
                 android:textSize="16dip" />
+
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

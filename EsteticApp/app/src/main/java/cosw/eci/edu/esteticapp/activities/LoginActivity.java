@@ -30,21 +30,35 @@ public class LoginActivity extends AppCompatActivity {
         createAccount = (TextView)findViewById(R.id.createAccount);
         email = (EditText)findViewById(R.id.email);
         password = (EditText)findViewById(R.id.password);
+        listenerLogin();
+        listenerCreateAccount();
+
+    }
+
+    /**
+     * Listener for a create new account
+     */
+    private void listenerCreateAccount() {
+        createAccount.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // Start the Signup activity
+                Intent intent = new Intent(getApplicationContext(), RegisterClientActivity.class);
+                startActivityForResult(intent, REQUEST_SIGNUP);
+            }
+        });
+    }
+
+    /**
+     * Listener for inialize login button
+     */
+    private void listenerLogin() {
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 login();
             }
         });
-        createAccount.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                // Start the Signup activity
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivityForResult(intent, REQUEST_SIGNUP);
-            }
-        });
-
     }
 
     /**
@@ -76,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         // On complete call either onLoginSuccess or onLoginFailed
                         onLoginSuccess();
-                        // onLoginFailed();
+                        //onLoginFailed();
                         progressDialog.dismiss();
                     }
                 }, 3000);
@@ -129,12 +143,12 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         login.setEnabled(true);
-        finish();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(intent, REQUEST_SIGNUP);
     }
 
     public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-
         login.setEnabled(true);
     }
 
