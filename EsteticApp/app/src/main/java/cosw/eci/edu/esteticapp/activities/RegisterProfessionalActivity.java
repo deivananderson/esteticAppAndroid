@@ -154,7 +154,7 @@ public class RegisterProfessionalActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         register.setEnabled(true);
-        Intent intent = new Intent(getApplicationContext(), MainClientActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainProfessionalActivity.class);
         startActivityForResult(intent, REQUEST_SIGNUP);
     }
 

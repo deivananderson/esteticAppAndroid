@@ -19,11 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.RegisterClientActivity" />
-        <activity android:name=".activities.MainClientActivity" />
         <activity android:name=".activities.RegisterProfessionalActivity" />
         <activity android:name=".activities.MainProfessionalActivity" />
         <activity
-            android:name=".activities.PruebaActivity"
+            android:name=".activities.MainClienteActivity"
             android:label="@string/title_activity_prueba"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

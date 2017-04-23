@@ -132,7 +132,7 @@ public class RegisterClientActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         register.setEnabled(true);
-        Intent intent = new Intent(getApplicationContext(), MainClientActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainClienteActivity.class);
         startActivityForResult(intent, REQUEST_SIGNUP);
     }
 
