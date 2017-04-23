@@ -137,13 +137,13 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // disable going back to the MainActivity
+        // disable going back to the MainClientActivity
         moveTaskToBack(true);
     }
 
     public void onLoginSuccess() {
         login.setEnabled(true);
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainClientActivity.class);
         startActivityForResult(intent, REQUEST_SIGNUP);
     }
 
