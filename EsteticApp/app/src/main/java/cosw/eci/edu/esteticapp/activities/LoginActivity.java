@@ -144,6 +144,8 @@ public class LoginActivity extends AppCompatActivity {
     public void onLoginSuccess() {
         login.setEnabled(true);
         Intent intent = new Intent(getApplicationContext(), MainClienteActivity.class);
+        intent.putExtra("name","Cliente");
+        intent.putExtra("email",this.email.getText().toString());
         startActivityForResult(intent, REQUEST_SIGNUP);
     }
 

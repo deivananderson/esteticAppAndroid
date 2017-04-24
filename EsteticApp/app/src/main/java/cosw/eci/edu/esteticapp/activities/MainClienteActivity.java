@@ -15,8 +15,10 @@ import android.view.View;
 
 import cosw.eci.edu.esteticapp.R;
 
-public class MainClienteActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainClienteActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private String email;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,13 @@ public class MainClienteActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        this.email = getIntent().getStringExtra("email");
+        this.name = getIntent().getStringExtra("name");
+        buttonHome();
+        configBar(toolbar);
+    }
+
+    private void buttonHome() {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,13 +42,14 @@ public class MainClienteActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+    }
 
+    private void configBar(Toolbar toolbar) {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }

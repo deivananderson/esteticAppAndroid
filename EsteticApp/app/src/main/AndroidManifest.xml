@@ -23,7 +23,7 @@
         <activity android:name=".activities.MainProfessionalActivity" />
         <activity
             android:name=".activities.MainClienteActivity"
-            android:label="@string/title_activity_prueba"
+            android:label="Home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
