@@ -12,13 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
 
 public class MainClienteActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    private String email;
     private String name;
+    private String email;
+    private TextView nameHome;
+    private TextView emailHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +28,8 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         setContentView(R.layout.activity_main_client);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        this.email = getIntent().getStringExtra("email");
-        this.name = getIntent().getStringExtra("name");
+        name = getIntent().getStringExtra("name");
+        email = getIntent().getStringExtra("email");
         buttonHome();
         configBar(toolbar);
     }
@@ -52,6 +53,11 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View view = navigationView.getHeaderView(0);
+        nameHome = (TextView)view.findViewById(R.id.name);
+        emailHome = (TextView)view.findViewById(R.id.email);
+        nameHome.setText(name);
+        emailHome.setText(email);
     }
 
     @Override
@@ -67,7 +73,7 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.prueba, menu);
+        getMenuInflater().inflate(R.menu.main_cliente, menu);
         return true;
     }
 
@@ -92,20 +98,15 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_reservation) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_data) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        }  else if (id == R.id.nav_logout) {
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

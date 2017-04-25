@@ -23,6 +23,7 @@ public class RegisterProfessionalActivity extends AppCompatActivity {
     private EditText password;
     private EditText name;
     private EditText id;
+    private TextView loginRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +35,10 @@ public class RegisterProfessionalActivity extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
         name = (EditText)findViewById(R.id.name);
         id = (EditText)findViewById(R.id.id);
+        loginRegister = (TextView)findViewById(R.id.loginAccount);
         listenerRegister();
         listenerTabClient();
+        listenerLoginAccount();
     }
 
     private void listenerTabClient() {
@@ -53,6 +56,20 @@ public class RegisterProfessionalActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 regist();
+            }
+        });
+    }
+
+    /**
+     * Listener for a login in log
+     */
+    private void listenerLoginAccount() {
+        loginRegister.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // Start the Signup activity
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
     }
