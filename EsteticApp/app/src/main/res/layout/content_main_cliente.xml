@@ -11,24 +11,31 @@
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                app:srcCompat="@drawable/titleservices" />
+
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="cursive"
                 android:gravity="center"
-                android:text="@string/services"
-                android:textColor="@color/colorAccent"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:text="@string/text_services" />
 
             <Space
                 android:layout_width="match_parent"
@@ -39,19 +46,55 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                <LinearLayout
+                    android:id="@+id/layout_hairdressing"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/peluqueria" />
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    <TextView
+                        android:id="@+id/text_hairdressing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/title_hairdressing"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/peluqueria" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_manicure"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/unas" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_manicure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/title_manicure"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/unas" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -64,19 +107,56 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imageView18"
+                <LinearLayout
+                    android:id="@+id/layout_massage"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/masajes" />
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imageView17"
+                    <TextView
+                        android:id="@+id/text_massage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/title_massage"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/masajes" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_depilation"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/depilacion" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_depilation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/title_depilation"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/depilacion" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cosw.eci.edu.esteticapp.activities.MainProfessionalActivity">
+    tools:context="cosw.eci.edu.esteticapp.activities.MainProfessionalActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+
 
 </android.support.constraint.ConstraintLayout>

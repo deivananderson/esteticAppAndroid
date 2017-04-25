@@ -20,11 +20,15 @@
         </activity>
         <activity android:name=".activities.RegisterClientActivity" />
         <activity android:name=".activities.RegisterProfessionalActivity" />
-        <activity android:name=".activities.MainProfessionalActivity" />
+        <activity
+            android:name=".activities.MainProfessionalActivity" />
         <activity
             android:name=".activities.MainClienteActivity"
             android:label="Home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.Services_client_Activity"
+            android:label="Services"/>
     </application>
 
 </manifest>

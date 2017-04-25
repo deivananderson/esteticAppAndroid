@@ -1,7 +1,7 @@
 package cosw.eci.edu.esteticapp.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import cosw.eci.edu.esteticapp.R;
 

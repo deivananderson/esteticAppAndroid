@@ -1,5 +1,6 @@
 package cosw.eci.edu.esteticapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -17,10 +18,16 @@ import android.widget.TextView;
 import cosw.eci.edu.esteticapp.R;
 
 public class MainClienteActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final int REQUEST_SIGNUP = 0;
     private String name;
     private String email;
     private TextView nameHome;
     private TextView emailHome;
+    private View hairdressing;
+    private View manicure;
+    private View massage;
+    private View depilation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,49 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         email = getIntent().getStringExtra("email");
         buttonHome();
         configBar(toolbar);
+        servicesTask();
+    }
+
+    /**
+     * Action in click on layout of services
+     */
+    private void servicesTask() {
+        hairdressing = (View)findViewById(R.id.layout_hairdressing);
+        manicure = (View)findViewById(R.id.layout_manicure);
+        massage = (View)findViewById(R.id.layout_massage);
+        depilation = (View)findViewById(R.id.layout_depilation);
+        hairdressing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
+                intent.putExtra("service","Hairdressing");
+                startActivityForResult(intent, REQUEST_SIGNUP);
+            }
+        });
+        manicure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
+                intent.putExtra("service","Manicure");
+                startActivityForResult(intent, REQUEST_SIGNUP);
+            }
+        });
+        massage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
+                intent.putExtra("service","Massage");
+                startActivityForResult(intent, REQUEST_SIGNUP);
+            }
+        });
+        depilation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
+                intent.putExtra("service","Depilation");
+                startActivityForResult(intent, REQUEST_SIGNUP);
+            }
+        });
     }
 
     private void buttonHome() {
@@ -39,7 +89,7 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Select one of the services", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -102,7 +152,7 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
             // Handle the camera action
         } else if (id == R.id.nav_reservation) {
 
-        } else if (id == R.id.nav_data) {
+        } else if (id == R.id.nav_account) {
 
         }  else if (id == R.id.nav_logout) {
 
