@@ -1,5 +1,6 @@
 package cosw.eci.edu.esteticapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,37 +12,44 @@ import cosw.eci.edu.esteticapp.R;
 
 public class Services_client_Activity extends AppCompatActivity {
 
+    private static final int REQUEST_SIGNUP = 0;
     private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
-            return false;
-        }
-
-    };
+    private String service;
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services_client_);
-
+        service = getIntent().getStringExtra("service");
         mTextMessage = (TextView) findViewById(R.id.message);
+        mTextMessage.setText(service);
+        buttonTop();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    private void buttonTop() {
+        mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        Intent intent = new Intent(getApplicationContext(), MainClienteActivity.class);
+                        startActivityForResult(intent, REQUEST_SIGNUP);
+                        return true;
+                    case R.id.navigation_services:
+
+                        return true;
+                    case R.id.navigation_reservation:
+
+                        return true;
+                }
+                return false;
+            }
+
+        };
     }
 
 }
