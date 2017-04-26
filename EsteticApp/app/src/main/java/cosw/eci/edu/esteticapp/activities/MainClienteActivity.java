@@ -89,7 +89,7 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Select one of the services", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "No reservations", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -155,6 +155,8 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
             startActivityForResult(intent, REQUEST_SIGNUP);
         } else if (id == R.id.nav_account) {
             Intent intent = new Intent(getApplicationContext(), AccountClientActivity.class);
+            intent.putExtra("name",name);
+            intent.putExtra("email",email);
             startActivityForResult(intent, REQUEST_SIGNUP);
         }  else if (id == R.id.nav_logout) {
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
