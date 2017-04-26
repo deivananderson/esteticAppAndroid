@@ -151,7 +151,8 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_reservation) {
-
+            Intent intent = new Intent(getApplicationContext(), ReservationClientActivity.class);
+            startActivityForResult(intent, REQUEST_SIGNUP);
         } else if (id == R.id.nav_account) {
 
         }  else if (id == R.id.nav_logout) {

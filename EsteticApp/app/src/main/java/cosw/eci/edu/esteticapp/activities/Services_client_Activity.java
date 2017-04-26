@@ -39,11 +39,9 @@ public class Services_client_Activity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), MainClienteActivity.class);
                         startActivityForResult(intent, REQUEST_SIGNUP);
                         return true;
-                    case R.id.navigation_services:
-
-                        return true;
                     case R.id.navigation_reservation:
-
+                        intent = new Intent(getApplicationContext(), ReservationClientActivity.class);
+                        startActivityForResult(intent, REQUEST_SIGNUP);
                         return true;
                 }
                 return false;

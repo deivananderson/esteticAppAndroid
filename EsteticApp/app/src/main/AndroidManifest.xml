@@ -20,15 +20,21 @@
         </activity>
         <activity android:name=".activities.RegisterClientActivity" />
         <activity android:name=".activities.RegisterProfessionalActivity" />
-        <activity
-            android:name=".activities.MainProfessionalActivity" />
+        <activity android:name=".activities.MainProfessionalActivity" />
         <activity
             android:name=".activities.MainClienteActivity"
             android:label="Home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.Services_client_Activity"
-            android:label="Services"/>
+            android:label="Services" />
+        <activity
+            android:name=".activities.ReservationClientActivity"
+            android:label="Reservations" />
+        <activity
+            android:name=".activities.AccountClientActivity"
+            android:label="@string/title_activity_account_client"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
