@@ -154,9 +154,11 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
             Intent intent = new Intent(getApplicationContext(), ReservationClientActivity.class);
             startActivityForResult(intent, REQUEST_SIGNUP);
         } else if (id == R.id.nav_account) {
-
+            Intent intent = new Intent(getApplicationContext(), AccountClientActivity.class);
+            startActivityForResult(intent, REQUEST_SIGNUP);
         }  else if (id == R.id.nav_logout) {
-
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivityForResult(intent, REQUEST_SIGNUP);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

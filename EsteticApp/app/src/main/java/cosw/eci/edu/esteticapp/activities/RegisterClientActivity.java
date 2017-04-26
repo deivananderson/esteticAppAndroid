@@ -11,7 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.services.Client;
 
 public class RegisterClientActivity extends AppCompatActivity {
 
@@ -22,6 +25,8 @@ public class RegisterClientActivity extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private TextView loginRegister;
+    private EditText name;
+    private ArrayList<Client> clients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,8 @@ public class RegisterClientActivity extends AppCompatActivity {
         email = (EditText)findViewById(R.id.email);
         password = (EditText)findViewById(R.id.password);
         loginRegister = (TextView)findViewById(R.id.loginAccount);
+        name = (EditText)findViewById(R.id.name);
+        clients = new ArrayList<>();
         listenerRegister();
         listenerTabProfessional();
         listenerLoginAccount();
@@ -85,9 +92,11 @@ public class RegisterClientActivity extends AppCompatActivity {
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
-
+        String name = this.name.getText().toString();
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
+        Client client = new Client(name,email,password);
+        clients.add(client);
 
         // TODO: Implement your own authentication logic here.
 
@@ -109,6 +118,7 @@ public class RegisterClientActivity extends AppCompatActivity {
     public boolean validate() {
         boolean valid = true;
 
+        String name = this.name.getText().toString();
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
 
@@ -125,7 +135,12 @@ public class RegisterClientActivity extends AppCompatActivity {
         } else {
             this.email.setError(null);
         }
-
+        if(name.isEmpty() || name.length()<4){
+            this.name.setError("name is need");
+            valid = false;
+        }else{
+            this.name.setError(null);
+        }
         return valid;
     }
 

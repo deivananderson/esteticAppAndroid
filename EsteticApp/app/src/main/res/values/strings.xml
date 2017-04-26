@@ -22,4 +22,5 @@
     <string name="title_available_services">Available services</string>
     <string name="title_activity_reservation_client">ReservationClientActivity</string>
     <string name="title_activity_account_client">AccountClientActivity</string>
+    <string name="hello_world">hello_word</string>
 </resources>
