@@ -10,12 +10,17 @@ public class Professional {
     private String id;
     private String email;
     private String password;
+    private String imageUrl;
+    private String services;
 
-    public Professional(String name, String id, String email, String password) {
+    public Professional(String name, String email,String services) {
         this.name = name;
-        this.id = id;
+        this.services = services;
         this.email = email;
-        this.password = password;
+    }
+
+    public Professional(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -48,5 +53,28 @@ public class Professional {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getImageUrl() {
+
+        return imageUrl;
+    }
+
+    public String getServices() {
+        return services;
+    }
+
+    public void setServices(String services) {
+        this.services = services;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

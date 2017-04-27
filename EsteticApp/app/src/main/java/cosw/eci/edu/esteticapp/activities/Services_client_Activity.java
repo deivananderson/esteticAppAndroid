@@ -5,17 +5,23 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.services.MessagesAdapter;
+import cosw.eci.edu.esteticapp.services.Professional;
 
 public class Services_client_Activity extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
     private static final int REQUEST_SIGNUP = 0;
     private TextView mTextMessage;
     private String service;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
+    MessagesAdapter messagesAdapter = new MessagesAdapter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,31 @@ public class Services_client_Activity extends AppCompatActivity {
         buttonTop();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        configureRecyclerView();
+        dataTest();
+
+    }
+
+    private void dataTest() {
+        Professional p1 = new Professional("Jasinto", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p2 = new Professional("Joana Melo", "joana@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p3 = new Professional("HyamEtOCO", "HAY@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p4 = new Professional("JAJAJAJ", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p5 = new Professional("LOL", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        messagesAdapter.addMessage(p1);
+        messagesAdapter.addMessage(p2);
+        messagesAdapter.addMessage(p3);
+        messagesAdapter.addMessage(p4);
+        messagesAdapter.addMessage(p5);
+    }
+
+    private void configureRecyclerView() {
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize( true );
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager( this );
+        linearLayoutManager.setReverseLayout( true );
+        recyclerView.setLayoutManager( linearLayoutManager );
+        recyclerView.setAdapter( messagesAdapter );
     }
 
     private void buttonTop() {
