@@ -25,7 +25,7 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
 
     private final Context context;
 
-    private List<Professional> professionals = new ArrayList<>();
+    private List<Reservation> reservations = new ArrayList<>();
 
     public MessagesAdapterReservations(Context context )
     {
@@ -42,16 +42,18 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
     @Override
     public void onBindViewHolder( ViewHolder viewHolder, int position )
     {
-        Professional professional = professionals.get( position );
-        viewHolder.name.setText( professional.getName() );
-        viewHolder.services.setText( professional.getServices() );
-        viewHolder.email.setText(professional.getEmail());
-        if ( professional.getImageUrl() != null )
+        Reservation reservation = reservations.get( position );
+        viewHolder.name.setText( reservation.getProfessional() );
+        viewHolder.services.setText( reservation.getServices() );
+        viewHolder.state.setText(reservation.getState());
+        viewHolder.price.setText(reservation.getPrice());
+        viewHolder.date.setText(reservation.getDate());
+        if ( reservation.getImageUrl() != null )
         {
             viewHolder.name.setVisibility( View.GONE );
             viewHolder.services.setVisibility( View.GONE );
             viewHolder.imageView.setVisibility( View.VISIBLE );
-            Picasso.with( context ).load( professional.getImageUrl() ).into( viewHolder.imageView );
+            Picasso.with( context ).load( reservation.getImageUrl() ).into( viewHolder.imageView );
         }
         else
         {
@@ -63,18 +65,18 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
     @Override
     public int getItemCount()
     {
-        return professionals.size();
+        return reservations.size();
     }
 
-    public void addMessage( Professional message )
+    public void addMessage( Reservation message )
     {
-        professionals.add( 0, message );
+        reservations.add( 0, message );
         notifyDataSetChanged();
     }
 
     public void removeMessage( Professional message )
     {
-        professionals.remove( message );
+        reservations.remove( message );
         notifyDataSetChanged();
     }
 
@@ -86,8 +88,14 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
         @BindView( R.id.services)
         TextView services;
 
-        @BindView( R.id.email)
-        TextView email;
+        @BindView( R.id.state_reservations)
+        TextView state;
+
+        @BindView(R.id.price)
+        TextView price;
+
+        @BindView(R.id.date)
+        TextView date;
 
         @BindView( R.id.circleView )
         ImageView imageView;
