@@ -1,6 +1,7 @@
 package cosw.eci.edu.esteticapp.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -35,8 +36,9 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         setContentView(R.layout.activity_main_client);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        name = getIntent().getStringExtra("name");
-        email = getIntent().getStringExtra("email");
+        SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
+        email = mPrefs.getString("email", "");
+        name = mPrefs.getString("name", "");
         buttonHome();
         configBar(toolbar);
         servicesTask();
@@ -159,6 +161,11 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
             intent.putExtra("email",email);
             startActivityForResult(intent, REQUEST_SIGNUP);
         }  else if (id == R.id.nav_logout) {
+            SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential", 123);
+            SharedPreferences.Editor editor = mPrefs.edit();
+            editor.putString("email", "");
+            editor.putString("rol", "");
+            editor.commit();
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivityForResult(intent, REQUEST_SIGNUP);
         }

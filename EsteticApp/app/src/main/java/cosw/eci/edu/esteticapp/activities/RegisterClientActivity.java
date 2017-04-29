@@ -2,6 +2,7 @@ package cosw.eci.edu.esteticapp.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -163,6 +164,17 @@ public class RegisterClientActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
+        String name = this.name.getText().toString();
+        String email = this.email.getText().toString();
+        String password = this.password.getText().toString();
+        SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential", 123);
+        SharedPreferences.Editor editor = mPrefs.edit();
+        editor.putString("name", name);
+        editor.putString("email", email);
+        editor.putString("password", password);
+        editor.putString("rol", "client");
+        editor.commit();
+
         register.setEnabled(true);
         Intent intent = new Intent(getApplicationContext(), MainClienteActivity.class);
         startActivityForResult(intent, REQUEST_SIGNUP);

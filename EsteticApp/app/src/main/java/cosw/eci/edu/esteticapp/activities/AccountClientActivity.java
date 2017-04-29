@@ -1,5 +1,6 @@
 package cosw.eci.edu.esteticapp.activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class AccountClientActivity extends AppCompatActivity {
     private int modified;
     private String nameR;
     private String emailR;
+    private String passwordR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +31,13 @@ public class AccountClientActivity extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
         name = (EditText)findViewById(R.id.name);
         modified = 0;
-        nameR = getIntent().getStringExtra("name");
-        emailR = getIntent().getStringExtra("email");
+        SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
+        String emailR = mPrefs.getString("email", "");
+        String nameR = mPrefs.getString("name", "");
+        String passwordR = mPrefs.getString("password", "");
         name.setText(nameR);
         email.setText(emailR);
-        password.setText("12345");
+        password.setText(passwordR);
         buttonModified();
     }
 
