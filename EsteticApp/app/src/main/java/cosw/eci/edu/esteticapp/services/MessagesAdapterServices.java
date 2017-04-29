@@ -21,13 +21,13 @@ import cosw.eci.edu.esteticapp.R;
  * Created by USUARIO on 25/04/2017.
  */
 
-public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.ViewHolder> {
+public class MessagesAdapterServices extends RecyclerView.Adapter<MessagesAdapterServices.ViewHolder> {
 
     private final Context context;
 
     private List<Professional> professionals = new ArrayList<>();
 
-    public MessagesAdapter( Context context )
+    public MessagesAdapterServices(Context context )
     {
         this.context = context;
     }
