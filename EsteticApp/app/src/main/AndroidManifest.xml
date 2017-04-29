@@ -9,27 +9,63 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".activities.LoginActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activities.RegisterClientActivity" />
-        <activity android:name=".activities.RegisterProfessionalActivity" />
-        <activity android:name=".activities.MainProfessionalActivity" />
+
+        <activity
+            android:name=".activities.RegisterClientActivity"
+            android:label="Client">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LoginActivity" />
+        </activity>
+
+        <activity
+            android:name=".activities.RegisterProfessionalActivity"
+            android:label="Professional">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LoginActivity" />
+        </activity>
+
+        <activity
+            android:name=".activities.MainProfessionalActivity">
+        </activity>
+
         <activity
             android:name=".activities.MainClienteActivity"
             android:label="Home"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <activity
             android:name=".activities.Services_client_Activity"
-            android:label="Services" />
+            android:label="Services">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainClienteActivity" />
+        </activity>
+
         <activity
             android:name=".activities.ReservationClientActivity"
-            android:label="Reservations" />
+            android:label="Reservations" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainClienteActivity" />
+        </activity>
+
         <activity
             android:name=".activities.AccountClientActivity"
             android:label="My Account"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainClienteActivity" />
+        </activity>
+
         <activity android:name=".activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,6 +73,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>
