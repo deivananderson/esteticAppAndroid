@@ -8,108 +8,63 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/circleView"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/imageView"
             android:layout_centerHorizontal="true"
             android:src="@drawable/cliente" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/nameProfessional"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_toRightOf="@id/icon"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Example application"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/nameProfessional"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignWithParentIfMissing="true"
-                    android:layout_toRightOf="@id/icon"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Name professional"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/price"
-                    android:layout_width="match_parent"
-                    android:layout_height="26dip"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_toRightOf="@id/icon"
-                    android:layout_weight="1"
-                    android:ellipsize="marquee"
-                    android:gravity="right"
-                    android:maxLines="1"
-                    android:paddingLeft="10dp"
-                    android:text="$120.000"
-                    android:textColor="@mipmap/ic_launcher_round"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/email"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="match_parent"
-                    android:layout_height="26dip"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_toRightOf="@id/icon"
-                    android:layout_weight="1"
-                    android:ellipsize="marquee"
-                    android:maxLines="1"
-                    android:paddingLeft="10dp"
-                    android:text="12/12/2017"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/state"
-                    android:layout_width="match_parent"
-                    android:layout_height="26dip"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_toRightOf="@id/icon"
-                    android:layout_weight="1"
-                    android:ellipsize="marquee"
-                    android:gravity="right"
-                    android:maxLines="1"
-                    android:paddingLeft="10dp"
-                    android:text="Active"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:layout_height="26dip"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/icon"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:text="Description"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/services"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="26dip"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/icon"
+                android:layout_weight="1"
                 android:ellipsize="marquee"
                 android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:text="Services add"
-                android:textSize="12sp" />
+                android:text="Description"
+                android:textSize="12sp"
+                android:paddingLeft="10dp"/>
 
         </LinearLayout>
 

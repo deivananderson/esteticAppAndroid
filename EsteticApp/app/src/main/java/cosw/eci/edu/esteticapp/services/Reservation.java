@@ -13,16 +13,16 @@ public class Reservation {
     private String state;
     private String imageUrl;
 
-    public Reservation(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public Reservation(String professional, String services, String date, String price, String state) {
         this.professional = professional;
         this.services = services;
         this.date = date;
         this.price = price;
         this.state = state;
+    }
+
+    public Reservation(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getProfessional() {
@@ -65,15 +65,10 @@ public class Reservation {
         this.state = state;
     }
 
-    public String getImageUrl() {
-
-        return imageUrl;
-    }
+    public String getImageUrl() {return imageUrl;}
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
+    public int hashCode() {return super.hashCode();}
 
     @Override
     public boolean equals(Object obj) {

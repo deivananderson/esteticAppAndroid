@@ -25,7 +25,7 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
 
     private final Context context;
 
-    private List<Reservation> reservations = new ArrayList<>();
+    private List<Professional> professionals = new ArrayList<>();
 
     public MessagesAdapterReservations(Context context )
     {
@@ -42,45 +42,39 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
     @Override
     public void onBindViewHolder( ViewHolder viewHolder, int position )
     {
-        Reservation reservation = reservations.get( position );
-        viewHolder.name.setText( reservation.getProfessional() );
-        viewHolder.price.setText( reservation.getPrice());
-        viewHolder.date.setText(reservation.getDate());
-        viewHolder.state.setText(reservation.getState());
-
-        if ( reservation.getImageUrl() != null )
+        Professional professional = professionals.get( position );
+        viewHolder.name.setText( professional.getName() );
+        viewHolder.services.setText( professional.getServices() );
+        viewHolder.email.setText(professional.getEmail());
+        if ( professional.getImageUrl() != null )
         {
             viewHolder.name.setVisibility( View.GONE );
-            viewHolder.price.setVisibility( View.GONE );
-            viewHolder.date.setVisibility(View.GONE);
-            viewHolder.state.setVisibility(View.GONE);
+            viewHolder.services.setVisibility( View.GONE );
             viewHolder.imageView.setVisibility( View.VISIBLE );
-            Picasso.with( context ).load( reservation.getImageUrl() ).into( viewHolder.imageView );
+            Picasso.with( context ).load( professional.getImageUrl() ).into( viewHolder.imageView );
         }
         else
         {
-            viewHolder.name.setVisibility( View.GONE );
-            viewHolder.price.setVisibility( View.GONE );
-            viewHolder.date.setVisibility(View.GONE);
-            viewHolder.state.setVisibility(View.GONE);
+            viewHolder.name.setVisibility( View.VISIBLE );
+            viewHolder.services.setVisibility( View.VISIBLE );
         }
     }
 
     @Override
     public int getItemCount()
     {
-        return reservations.size();
+        return professionals.size();
     }
 
-    public void addMessage( Reservation message )
+    public void addMessage( Professional message )
     {
-        reservations.add( 0, message );
+        professionals.add( 0, message );
         notifyDataSetChanged();
     }
 
-    public void removeMessage( Reservation message )
+    public void removeMessage( Professional message )
     {
-        reservations.remove( message );
+        professionals.remove( message );
         notifyDataSetChanged();
     }
 
@@ -89,14 +83,11 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
         @BindView( R.id.nameProfessional )
         TextView name;
 
-        @BindView( R.id.price)
-        TextView price;
+        @BindView( R.id.services)
+        TextView services;
 
-        @BindView( R.id.date)
-        TextView date;
-
-        @BindView( R.id.state)
-        TextView state;
+        @BindView( R.id.email)
+        TextView email;
 
         @BindView( R.id.circleView )
         ImageView imageView;

@@ -55,11 +55,6 @@ public class Professional {
         this.password = password;
     }
 
-    public String getImageUrl() {
-
-        return imageUrl;
-    }
-
     public String getServices() {
         return services;
     }
@@ -67,6 +62,8 @@ public class Professional {
     public void setServices(String services) {
         this.services = services;
     }
+
+    public String getImageUrl() { return imageUrl; }
 
     @Override
     public int hashCode() {

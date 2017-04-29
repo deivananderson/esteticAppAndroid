@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
 import cosw.eci.edu.esteticapp.services.MessagesAdapterReservations;
+import cosw.eci.edu.esteticapp.services.Professional;
 
 public class ReservationClientActivity extends AppCompatActivity {
 
@@ -30,7 +31,32 @@ public class ReservationClientActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         configureRecyclerView();
+        dataTest();
     }
+
+    private void dataTest() {
+        Professional p1 = new Professional("Jasinto", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p2 = new Professional("Joana Melo", "joana@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p3 = new Professional("HyamEtOCO", "HAY@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p4 = new Professional("JAJAJAJ", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p5 = new Professional("LOL", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p6 = new Professional("LOL", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p7 = new Professional("LOL", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p8 = new Professional("LOL", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p9 = new Professional("LOL", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        Professional p10 = new Professional("LOL", "jacinto@mail.com","Manicure, Pedicure, Cortes, Masajes");
+        messagesAdapterServices.addMessage(p1);
+        messagesAdapterServices.addMessage(p2);
+        messagesAdapterServices.addMessage(p3);
+        messagesAdapterServices.addMessage(p4);
+        messagesAdapterServices.addMessage(p5);
+        messagesAdapterServices.addMessage(p6);
+        messagesAdapterServices.addMessage(p7);
+        messagesAdapterServices.addMessage(p8);
+        messagesAdapterServices.addMessage(p9);
+        messagesAdapterServices.addMessage(p10);
+    }
+
 
     private void configureRecyclerView() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
