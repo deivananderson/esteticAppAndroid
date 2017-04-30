@@ -71,7 +71,7 @@ public class AccountClientActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Data update")
                 .setMessage("Secure data update?")
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         email = (EditText)findViewById(R.id.email);
                         password = (EditText)findViewById(R.id.password);
@@ -90,7 +90,7 @@ public class AccountClientActivity extends AppCompatActivity {
                         modified =0;
                     }
                 })
-                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
                         String emailR = mPrefs.getString("email", "");

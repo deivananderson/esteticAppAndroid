@@ -61,7 +61,11 @@
         </activity>
         <activity
             android:name=".activities.NewReservationActivity"
-            android:label="@string/title_activity_new_reservation"></activity>
+            android:label="New reservation">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.Services_client_Activity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,6 +1,8 @@
 package cosw.eci.edu.esteticapp.services;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +50,33 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
         viewHolder.state.setText(reservation.getState());
         viewHolder.price.setText(reservation.getPrice());
         viewHolder.date.setText(reservation.getDate());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                TextView name = (TextView) v.findViewById(R.id.nameProfessional);
+                TextView state = (TextView)v.findViewById(R.id.state_reservations);
+                new AlertDialog.Builder(context)
+                        .setTitle(name.getText().toString())
+                        .setMessage("The reservation is:"+state.getText().toString())
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setNeutralButton("Modify",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+            }
+        });
         if ( reservation.getImageUrl() != null )
         {
             viewHolder.name.setVisibility( View.GONE );

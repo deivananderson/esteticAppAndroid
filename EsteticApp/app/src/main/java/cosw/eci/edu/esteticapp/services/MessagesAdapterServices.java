@@ -18,7 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cosw.eci.edu.esteticapp.R;
-import cosw.eci.edu.esteticapp.activities.MainClienteActivity;
+import cosw.eci.edu.esteticapp.activities.NewReservationActivity;
 
 /**
  * Created by USUARIO on 25/04/2017.
@@ -52,8 +52,13 @@ public class MessagesAdapterServices extends RecyclerView.Adapter<MessagesAdapte
             @Override
             public void onClick(View v) {
                 TextView name = (TextView) v.findViewById(R.id.nameProfessional);
+                TextView email = (TextView) v.findViewById(R.id.email);
+                TextView service = (TextView)v.findViewById(R.id.services);
                 Toast.makeText(context, "You select: "+name.getText().toString(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(context, MainClienteActivity.class);
+                Intent intent = new Intent(context, NewReservationActivity.class);
+                intent.putExtra("nameProfessional",name.getText().toString());
+                intent.putExtra("email",email.getText().toString());
+                intent.putExtra("services",service.getText().toString());
                 context.startActivity(intent);
             }
         });

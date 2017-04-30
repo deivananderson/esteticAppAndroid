@@ -24,4 +24,6 @@
     <string name="title_activity_account_client">AccountClientActivity</string>
     <string name="hello_world">hello_word</string>
     <string name="title_activity_new_reservation">NewReservationActivity</string>
+    <string name="text_new_reserve">What services do you want to reserve?</string>
+    <string name="messaje_new_service">Enter reservation data</string>
 </resources>

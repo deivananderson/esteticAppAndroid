@@ -13,7 +13,6 @@ public class StartActivity extends AppCompatActivity {
     private static final String TAG = "StartActivity";
     private static final int REQUEST_SIGNUP = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
