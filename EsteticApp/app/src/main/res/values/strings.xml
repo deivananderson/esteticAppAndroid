@@ -23,4 +23,5 @@
     <string name="title_activity_reservation_client">ReservationClientActivity</string>
     <string name="title_activity_account_client">AccountClientActivity</string>
     <string name="hello_world">hello_word</string>
+    <string name="title_activity_new_reservation">NewReservationActivity</string>
 </resources>

@@ -1,12 +1,14 @@
 package cosw.eci.edu.esteticapp.services;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -16,6 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.activities.MainClienteActivity;
 
 /**
  * Created by USUARIO on 25/04/2017.
@@ -23,10 +26,9 @@ import cosw.eci.edu.esteticapp.R;
 
 public class MessagesAdapterServices extends RecyclerView.Adapter<MessagesAdapterServices.ViewHolder> {
 
+    private static final int REQUEST_SIGNUP = 0;
     private final Context context;
-
     private List<Professional> professionals = new ArrayList<>();
-
     public MessagesAdapterServices(Context context )
     {
         this.context = context;
@@ -35,7 +37,7 @@ public class MessagesAdapterServices extends RecyclerView.Adapter<MessagesAdapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType )
     {
-        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.reciclerview_servicios, parent, false );
+        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_servicios, parent, false );
         return new ViewHolder( view );
     }
 
@@ -46,6 +48,16 @@ public class MessagesAdapterServices extends RecyclerView.Adapter<MessagesAdapte
         viewHolder.name.setText( professional.getName() );
         viewHolder.services.setText( professional.getServices() );
         viewHolder.email.setText(professional.getEmail());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                TextView name = (TextView) v.findViewById(R.id.nameProfessional);
+                Toast.makeText(context, "You select: "+name.getText().toString(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context, MainClienteActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
         if ( professional.getImageUrl() != null )
         {
             viewHolder.name.setVisibility( View.GONE );
