@@ -23,10 +23,8 @@ public class MainProfessionalActivity extends AppCompatActivity implements Navig
     private String email;
     private TextView nameHome;
     private TextView emailHome;
-    private View hairdressing;
-    private View manicure;
-    private View massage;
-    private View depilation;
+    private View services;
+    private View reservatios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,39 +44,20 @@ public class MainProfessionalActivity extends AppCompatActivity implements Navig
      * Action in click on layout of services
      */
     private void servicesTask() {
-        hairdressing = (View)findViewById(R.id.layout_hairdressing);
-        manicure = (View)findViewById(R.id.layout_manicure);
-        massage = (View)findViewById(R.id.layout_massage);
-        depilation = (View)findViewById(R.id.layout_depilation);
-        hairdressing.setOnClickListener(new View.OnClickListener() {
+        services = (View)findViewById(R.id.layout_services);
+        reservatios = (View)findViewById(R.id.layout_reservations);
+
+        services.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
-                intent.putExtra("service","Hairdressing");
+                Intent intent = new Intent(getApplicationContext(), Services_professional_Activity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
-        manicure.setOnClickListener(new View.OnClickListener() {
+        reservatios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
-                intent.putExtra("service","Manicure");
-                startActivityForResult(intent, REQUEST_SIGNUP);
-            }
-        });
-        massage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
-                intent.putExtra("service","Massage");
-                startActivityForResult(intent, REQUEST_SIGNUP);
-            }
-        });
-        depilation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
-                intent.putExtra("service","Depilation");
+                Intent intent = new Intent(getApplicationContext(), ReservationProfessionalActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });

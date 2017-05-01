@@ -25,21 +25,21 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                app:srcCompat="@drawable/titleservices" />
+                android:layout_width="386dp"
+                android:layout_height="54dp"
+                app:srcCompat="@drawable/eslogan" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="20sp"
-                android:text="@string/text_services" />
+                android:text="Select one action "
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="10dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,60 +47,34 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/layout_hairdressing"
+                    android:id="@+id/layout_services"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text_hairdressing"
+                        android:id="@+id/text_services"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/title_hairdressing"
+                        android:text="Services"
                         android:textColor="@color/colorAccent"
-                        android:textSize="20sp" />
+                        android:textSize="25sp" />
 
                     <ImageView
                         android:id="@+id/imageView3"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/peluqueria" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_manicure"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/text_manicure"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/title_manicure"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView7"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/unas" />
+                        android:layout_height="157dp"
+                        app:srcCompat="@drawable/all_services" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="10dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,53 +82,27 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/layout_massage"
+                    android:id="@+id/layout_reservations"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text_massage"
+                        android:id="@+id/text_reservatios"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/title_massage"
+                        android:text="Reservations"
                         android:textColor="@color/colorAccent"
-                        android:textSize="20sp" />
+                        android:textSize="25sp" />
 
                     <ImageView
                         android:id="@+id/imageView18"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/masajes" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_depilation"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/text_depilation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/title_depilation"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView17"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/depilacion" />
+                        android:layout_height="135dp"
+                        app:srcCompat="@drawable/calendar_reservatios" />
                 </LinearLayout>
 
             </LinearLayout>
