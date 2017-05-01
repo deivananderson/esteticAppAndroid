@@ -182,7 +182,7 @@ public class RegisterProfessionalActivity extends AppCompatActivity {
         editor.putString("password", email);
         editor.putString("name", email);
         editor.putString("id", email);
-        editor.putString("rol", "professional");
+        editor.putString("role", "professional");
         editor.commit();
 
         register.setEnabled(true);

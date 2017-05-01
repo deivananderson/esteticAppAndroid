@@ -31,20 +31,25 @@ public class StartActivity extends AppCompatActivity {
                 new Runnable() {
                     public void run() {
                         SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
-                        String data = mPrefs.getString("email", "");
-                        if(data == ""){
+                        String email = mPrefs.getString("email", "");
+                        String role = mPrefs.getString("role","");
+                        if(email == "" || email == null){
                             onLoginFailed();
                         }else{
-                            onLoginSuccess(data);
+                            onLoginSuccess(email,role);
                         }
                         progressDialog.dismiss();
                     }
                 }, 3000);
     }
 
-    private void onLoginSuccess(String email) {
-
-        Intent intent = new Intent(getApplicationContext(), MainClienteActivity.class);
+    private void onLoginSuccess(String email, String role) {
+        Intent intent;
+        if(role.equals("client")){
+            intent = new Intent(getApplicationContext(), MainClienteActivity.class);
+        }else{
+            intent = new Intent(getApplicationContext(), MainProfessionalActivity.class);
+        }
         intent.putExtra("name","Cliente");
         intent.putExtra("email",email);
         startActivityForResult(intent, REQUEST_SIGNUP);

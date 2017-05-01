@@ -172,7 +172,7 @@ public class RegisterClientActivity extends AppCompatActivity {
         editor.putString("name", name);
         editor.putString("email", email);
         editor.putString("password", password);
-        editor.putString("rol", "client");
+        editor.putString("role", "client");
         editor.commit();
 
         register.setEnabled(true);
