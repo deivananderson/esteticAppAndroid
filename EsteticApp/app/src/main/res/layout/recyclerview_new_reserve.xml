@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_height="35dp"
     android:padding="6dip">
 
     <LinearLayout
+        android:id="@+id/row"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:orientation="horizontal">
@@ -25,9 +26,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="right"
             android:text="$250.000"
-            android:textSize="18sp"
-            android:gravity="right"/>
+            android:textSize="18sp" />
 
     </LinearLayout>
 

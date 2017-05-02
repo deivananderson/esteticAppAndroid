@@ -44,7 +44,8 @@ public class MessagesAdapterNewReservation extends RecyclerView.Adapter<Messages
         viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                View row = (View) v.findViewById(R.id.row);
+                row.setBackgroundColor(0xFF00FF00);
             }
         });
         viewHolder.name.setVisibility( View.GONE);
