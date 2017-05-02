@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cosw.eci.edu.esteticapp.activities.Services_client_Activity">
+    tools:context="cosw.eci.edu.esteticapp.activities.client.Services_client_Activity">
 
     <FrameLayout
         android:id="@+id/content"

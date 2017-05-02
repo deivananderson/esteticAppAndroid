@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.activities.client.MainClienteActivity;
+import cosw.eci.edu.esteticapp.activities.professional.MainProfessionalActivity;
 
 public class StartActivity extends AppCompatActivity {
 

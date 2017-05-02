@@ -9,53 +9,64 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".activities.LoginActivity"
-            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activities.RegisterClientActivity"
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activities.client.RegisterClientActivity"
             android:label="Client">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.LoginActivity" />
         </activity>
+
         <activity
-            android:name=".activities.RegisterProfessionalActivity"
+            android:name=".activities.professional.RegisterProfessionalActivity"
             android:label="Professional">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.LoginActivity" />
         </activity>
+
         <activity
-            android:name=".activities.MainProfessionalActivity"
+            android:name=".activities.professional.MainProfessionalActivity"
             android:label="Home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
         <activity
-            android:name=".activities.MainClienteActivity"
+            android:name=".activities.client.MainClienteActivity"
             android:label="Home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
         <activity
-            android:name=".activities.Services_client_Activity"
+            android:name=".activities.client.Services_client_Activity"
             android:label="Services">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainClienteActivity" />
+                android:value=".activities.client.MainClienteActivity" />
         </activity>
+
         <activity
-            android:name=".activities.ReservationClientActivity"
+            android:name=".activities.client.ReservationClientActivity"
             android:label="Reservations">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainClienteActivity" />
+                android:value=".activities.client.MainClienteActivity" />
         </activity>
+
         <activity
-            android:name=".activities.AccountClientActivity"
+            android:name=".activities.client.AccountClientActivity"
             android:label="My Account">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainClienteActivity" />
+                android:value=".activities.client.MainClienteActivity" />
         </activity>
+
         <activity android:name=".activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,28 +74,47 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".activities.NewReservationActivity"
+            android:name=".activities.client.NewReservationActivity"
             android:label="New reservation">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.Services_client_Activity" />
+                android:value=".activities.client.Services_client_Activity" />
         </activity>
 
         <activity
-            android:name=".activities.Services_professional_Activity"
-            android:label="My services">>
+            android:name=".activities.professional.Services_professional_Activity"
+            android:label="My services">
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainProfessionalActivity" />
+                android:value=".activities.professional.MainProfessionalActivity" />
         </activity>
 
         <activity
-            android:name=".activities.ReservationProfessionalActivity"
+            android:name=".activities.professional.ReservationProfessionalActivity"
             android:label="Reservations">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainProfessionalActivity" />
+                android:value=".activities.professional.MainProfessionalActivity" />
+        </activity>
+
+        <activity
+            android:name=".activities.professional.AddServicesActivity"
+            android:label="Add Service">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.professional.Services_professional_Activity" />
+        </activity>
+
+        <activity
+            android:name=".activities.professional.AddServiceSelectedActivity"
+            android:label="Select Services"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.professional.AddServicesActivity" />
         </activity>
     </application>
 

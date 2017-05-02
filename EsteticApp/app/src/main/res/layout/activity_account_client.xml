@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cosw.eci.edu.esteticapp.activities.AccountClientActivity">
+    tools:context="cosw.eci.edu.esteticapp.activities.client.AccountClientActivity">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

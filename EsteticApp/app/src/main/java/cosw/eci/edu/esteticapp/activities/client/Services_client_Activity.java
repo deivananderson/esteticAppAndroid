@@ -1,4 +1,4 @@
-package cosw.eci.edu.esteticapp.activities;
+package cosw.eci.edu.esteticapp.activities.client;
 
 import android.content.Intent;
 import android.os.Bundle;

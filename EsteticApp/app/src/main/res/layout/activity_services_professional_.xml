@@ -4,6 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cosw.eci.edu.esteticapp.activities.Services_professional_Activity">
+    tools:context="cosw.eci.edu.esteticapp.activities.professional.Services_professional_Activity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            app:srcCompat="@drawable/servicesprovider"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="List of Services"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="368dp"
+                        android:layout_height="430dp"
+                        android:focusable="false"
+                        android:scrollbars="vertical"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="8dp" />
+                </android.support.constraint.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/addServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Services"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorButton"
+                    android:textStyle="bold"
+                    android:onClick="addServices"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

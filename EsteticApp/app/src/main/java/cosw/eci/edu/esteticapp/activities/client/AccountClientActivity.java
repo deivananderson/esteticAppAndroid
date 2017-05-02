@@ -1,4 +1,4 @@
-package cosw.eci.edu.esteticapp.activities;
+package cosw.eci.edu.esteticapp.activities.client;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;

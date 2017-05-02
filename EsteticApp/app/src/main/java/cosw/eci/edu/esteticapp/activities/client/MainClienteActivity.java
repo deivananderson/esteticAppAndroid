@@ -1,4 +1,4 @@
-package cosw.eci.edu.esteticapp.activities;
+package cosw.eci.edu.esteticapp.activities.client;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.activities.LoginActivity;
 
 public class MainClienteActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

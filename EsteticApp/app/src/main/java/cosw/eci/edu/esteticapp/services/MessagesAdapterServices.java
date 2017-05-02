@@ -18,7 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cosw.eci.edu.esteticapp.R;
-import cosw.eci.edu.esteticapp.activities.NewReservationActivity;
+import cosw.eci.edu.esteticapp.activities.client.NewReservationActivity;
 
 /**
  * Created by USUARIO on 25/04/2017.

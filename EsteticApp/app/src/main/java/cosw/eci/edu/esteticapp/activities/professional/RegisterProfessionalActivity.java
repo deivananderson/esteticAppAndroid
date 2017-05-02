@@ -1,4 +1,4 @@
-package cosw.eci.edu.esteticapp.activities;
+package cosw.eci.edu.esteticapp.activities.professional;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,44 +12,43 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import cosw.eci.edu.esteticapp.R;
-import cosw.eci.edu.esteticapp.services.Client;
+import cosw.eci.edu.esteticapp.activities.LoginActivity;
+import cosw.eci.edu.esteticapp.activities.client.RegisterClientActivity;
 
-public class RegisterClientActivity extends AppCompatActivity {
+public class RegisterProfessionalActivity extends AppCompatActivity {
 
-    private static final String TAG = "RegisterClientActivity";
+    private static final String TAG = "RegisterProfessional";
     private static final int REQUEST_SIGNUP = 0;
     private Button register;
-    private TextView professional;
+    private TextView client;
     private EditText email;
     private EditText password;
-    private TextView loginRegister;
     private EditText name;
-    private ArrayList<Client> clients;
+    private EditText id;
+    private TextView loginRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registerclient);
+        setContentView(R.layout.activity_register_professional);
         register = (Button)findViewById(R.id.register);
-        professional = (TextView)findViewById(R.id.professional);
+        client = (TextView)findViewById(R.id.client);
         email = (EditText)findViewById(R.id.email);
         password = (EditText)findViewById(R.id.password);
-        loginRegister = (TextView)findViewById(R.id.loginAccount);
         name = (EditText)findViewById(R.id.name);
-        clients = new ArrayList<>();
+        id = (EditText)findViewById(R.id.id);
+        loginRegister = (TextView)findViewById(R.id.loginAccount);
         listenerRegister();
-        listenerTabProfessional();
+        listenerTabClient();
         listenerLoginAccount();
     }
 
-    private void listenerTabProfessional() {
-        professional.setOnClickListener(new View.OnClickListener(){
+    private void listenerTabClient() {
+        client.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), RegisterProfessionalActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterClientActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
@@ -88,16 +87,16 @@ public class RegisterClientActivity extends AppCompatActivity {
 
         register.setEnabled(false);
 
-        final ProgressDialog progressDialog = new ProgressDialog(RegisterClientActivity.this,
+        final ProgressDialog progressDialog = new ProgressDialog(RegisterProfessionalActivity.this,
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
-        String name = this.name.getText().toString();
+
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
-        Client client = new Client(name,email,password);
-        clients.add(client);
+        String name = this.name.getText().toString();
+        String id = this.id.getText().toString();
 
         // TODO: Implement your own authentication logic here.
 
@@ -119,9 +118,10 @@ public class RegisterClientActivity extends AppCompatActivity {
     public boolean validate() {
         boolean valid = true;
 
-        String name = this.name.getText().toString();
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
+        String name = this.name.getText().toString();
+        String id = this.id.getText().toString();
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             this.email.setError("enter a valid email address");
@@ -136,12 +136,21 @@ public class RegisterClientActivity extends AppCompatActivity {
         } else {
             this.email.setError(null);
         }
+
         if(name.isEmpty() || name.length()<4){
             this.name.setError("name is need");
             valid = false;
         }else{
             this.name.setError(null);
         }
+
+        if(id.isEmpty() || id.length()<7){
+            this.id.setError("Id is need, between 7 and 15");
+            valid = false;
+        }else{
+            this.id.setError(null);
+        }
+
         return valid;
     }
 
@@ -164,19 +173,22 @@ public class RegisterClientActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
-        String name = this.name.getText().toString();
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
+        String name = this.name.getText().toString();
+        String id = this.id.getText().toString();
+
         SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential", 123);
         SharedPreferences.Editor editor = mPrefs.edit();
-        editor.putString("name", name);
-        editor.putString("email", email);
-        editor.putString("password", password);
-        editor.putString("role", "client");
+        editor.putString("email", name);
+        editor.putString("password", email);
+        editor.putString("name", email);
+        editor.putString("id", email);
+        editor.putString("role", "professional");
         editor.commit();
 
         register.setEnabled(true);
-        Intent intent = new Intent(getApplicationContext(), MainClienteActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainProfessionalActivity.class);
         startActivityForResult(intent, REQUEST_SIGNUP);
     }
 
@@ -184,5 +196,4 @@ public class RegisterClientActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
         register.setEnabled(true);
     }
-
 }

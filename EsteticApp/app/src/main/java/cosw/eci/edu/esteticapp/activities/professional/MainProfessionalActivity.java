@@ -1,4 +1,4 @@
-package cosw.eci.edu.esteticapp.activities;
+package cosw.eci.edu.esteticapp.activities.professional;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +16,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.activities.LoginActivity;
+import cosw.eci.edu.esteticapp.activities.client.ReservationClientActivity;
+import cosw.eci.edu.esteticapp.activities.client.AccountClientActivity;
 
 public class MainProfessionalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private static final int REQUEST_SIGNUP = 0;

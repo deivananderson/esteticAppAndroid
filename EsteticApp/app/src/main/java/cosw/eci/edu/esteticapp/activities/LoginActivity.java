@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.activities.client.MainClienteActivity;
+import cosw.eci.edu.esteticapp.activities.client.RegisterClientActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package cosw.eci.edu.esteticapp.activities;
+package cosw.eci.edu.esteticapp.activities.professional;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.activities.client.MainClienteActivity;
 import cosw.eci.edu.esteticapp.services.MessagesAdapterReservations;
 import cosw.eci.edu.esteticapp.services.Reservation;
 
