@@ -27,9 +27,10 @@ public class NewReservationActivity extends AppCompatActivity {
     private EditText numberPhone;
     private TextView name;
     private TextView email;
+    private TextView cost;
     private Button reserve;
     private RecyclerView recyclerView;
-    MessagesAdapterNewReservation messagesAdapterNewReservation = new MessagesAdapterNewReservation(this);
+    MessagesAdapterNewReservation messagesAdapterNewReservation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,23 +43,25 @@ public class NewReservationActivity extends AppCompatActivity {
         address = (EditText) findViewById(R.id.address);
         numberPhone = (EditText) findViewById(R.id.numberPhone);
         reserve = (Button) findViewById(R.id.reserve);
+        cost = (TextView) findViewById(R.id.total);
         name.setText(nameProfessional);
         email.setText(emailProfessional);
+         messagesAdapterNewReservation = new MessagesAdapterNewReservation(this,cost);
         configureRecyclerView();
         dataTest();
     }
 
     private void dataTest() {
-        Service s1 = new Service("Corte nino","$15.000","hay no mas");
-        Service s2 = new Service("Corte nino","$15.000","hay no mas");
-        Service s3 = new Service("Corte nino","$15.000","hay no mas");
-        Service s4 = new Service("Corte nino","$15.000","hay no mas");
-        Service s5 = new Service("Corte nino","$15.000","hay no mas");
-        Service s6 = new Service("Corte nino","$15.000","hay no mas");
-        Service s7 = new Service("Corte nino","$15.000","hay no mas");
-        Service s8 = new Service("Corte nino","$15.000","hay no mas");
-        Service s9 = new Service("Corte nino","$15.000","hay no mas");
-        Service s10 = new Service("Corte nino","$15.000","hay no mas");
+        Service s1 = new Service("Corte nino","12000","hay no mas");
+        Service s2 = new Service("Corte Adulto","15000","hay no mas");
+        Service s3 = new Service("Corte Mujer","15000","hay no mas");
+        Service s4 = new Service("Alizado","25000","hay no mas");
+        Service s5 = new Service("Manicure","22000","hay no mas");
+        Service s6 = new Service("Tintura","5000","hay no mas");
+        Service s7 = new Service("Masajes total","55000","hay no mas");
+        Service s8 = new Service("Crespos","15000","hay no mas");
+        Service s9 = new Service("Maquillaje","25000","hay no mas");
+        Service s10 = new Service("Depilación","35000","hay no mas");
         messagesAdapterNewReservation.addMessage(s1);
         messagesAdapterNewReservation.addMessage(s2);
         messagesAdapterNewReservation.addMessage(s3);

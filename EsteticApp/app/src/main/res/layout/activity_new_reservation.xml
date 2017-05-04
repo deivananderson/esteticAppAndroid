@@ -15,18 +15,14 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/circleView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_below="@+id/imageView"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
             android:src="@drawable/cliente" />
 
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -110,19 +106,17 @@
             android:layout_height="8dp" />
 
         <android.support.constraint.ConstraintLayout
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:background="@color/iron">
+            android:background="@drawable/customborder">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="300dp"
-                android:layout_height="150dp"
+                android:layout_height="140dp"
                 android:focusable="false"
-                android:scrollbars="vertical"
-                tools:layout_editor_absoluteX="20dp"
-                tools:layout_editor_absoluteY="8dp" />
+                android:scrollbars="vertical" />
         </android.support.constraint.ConstraintLayout>
 
         <LinearLayout
@@ -135,7 +129,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="3.19"
+                android:layout_weight="4.52"
                 android:text="Total"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
@@ -143,16 +137,24 @@
                 tools:text="Total" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/badge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="$500.000"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="$0"
-                android:gravity="right"/>
+                android:text="$" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.42"
+                android:gravity="right"
+                android:text="500000"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <Space

@@ -23,9 +23,14 @@ public class MessagesAdapterNewReservation extends RecyclerView.Adapter<Messages
     private static final int REQUEST_SIGNUP = 0;
     private final Context context;
     private List<Service> services = new ArrayList<>();
-    public MessagesAdapterNewReservation(Context context )
+    private TextView cost;
+    private int acount;
+    public MessagesAdapterNewReservation(Context context,TextView cost)
     {
         this.context = context;
+        this.cost=cost;
+        cost.setText("0");
+        acount = 0;
     }
 
     @Override
@@ -44,8 +49,27 @@ public class MessagesAdapterNewReservation extends RecyclerView.Adapter<Messages
         viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                TextView status = (TextView)v.findViewById(R.id.status);
+                TextView textView;
                 View row = (View) v.findViewById(R.id.row);
-                row.setBackgroundColor(0xFF00FF00);
+                if(!status.getText().toString().equals(">")){
+                    status.setText(">");
+                    row.setBackgroundColor(0xFF00FF00);
+                    textView = (TextView)v.findViewById(R.id.price);
+                    int value = Integer.parseInt(textView.getText().toString());
+                    acount = Integer.parseInt(cost.getText().toString());
+                    acount = acount +value;
+                    cost.setText(""+acount);
+                }else {
+                    row.setBackgroundColor(0x00000000);
+                    textView = (TextView)v.findViewById(R.id.price);
+                    int value = Integer.parseInt(textView.getText().toString());
+                    acount = Integer.parseInt(cost.getText().toString());
+                    acount = acount - value;
+                    cost.setText(""+acount);
+                    status.setText("");
+                }
+
             }
         });
         viewHolder.name.setVisibility( View.GONE);
