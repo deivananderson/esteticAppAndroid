@@ -1,5 +1,7 @@
 package cosw.eci.edu.esteticapp.services;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by USUARIO on 25/04/2017.
  */
@@ -10,7 +12,7 @@ public class Professional {
     private String id;
     private String email;
     private String password;
-    private String imageUrl;
+    private Bitmap imageUrl;
     private String services;
 
     public Professional(String name, String email,String services) {
@@ -19,7 +21,7 @@ public class Professional {
         this.email = email;
     }
 
-    public Professional(String imageUrl) {
+    public Professional(Bitmap imageUrl) {
         this.imageUrl = imageUrl;
     }
 
@@ -63,7 +65,11 @@ public class Professional {
         this.services = services;
     }
 
-    public String getImageUrl() { return imageUrl; }
+    public Bitmap getImageUrl() { return imageUrl; }
+
+    public void setImageUrl(Bitmap imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     @Override
     public int hashCode() {

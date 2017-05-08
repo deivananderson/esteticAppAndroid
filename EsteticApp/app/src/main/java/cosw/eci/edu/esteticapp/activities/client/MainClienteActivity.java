@@ -55,32 +55,44 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         hairdressing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+                SharedPreferences.Editor editor = mPrefs.edit();
+                editor.putString("service", "Hairdressing");
+                editor.commit();
                 Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
-                intent.putExtra("service","Hairdressing");
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
         manicure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+                SharedPreferences.Editor editor = mPrefs.edit();
+                editor.putString("service", "Manicure");
+                editor.commit();
                 Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
-                intent.putExtra("service","Manicure");
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
         massage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+                SharedPreferences.Editor editor = mPrefs.edit();
+                editor.putString("service", "Massage");
+                editor.commit();
                 Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
-                intent.putExtra("service","Massage");
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
         depilation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+                SharedPreferences.Editor editor = mPrefs.edit();
+                editor.putString("service", "Depilation");
+                editor.commit();
                 Intent intent = new Intent(getApplicationContext(), Services_client_Activity.class);
-                intent.putExtra("service","Depilation");
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });

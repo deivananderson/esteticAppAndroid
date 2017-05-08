@@ -3,6 +3,7 @@ package cosw.eci.edu.esteticapp.activities.client;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,8 @@ public class NewReservationActivity extends AppCompatActivity {
     private TextView email;
     private TextView cost;
     private Button reserve;
+    private ImageView image;
+    private Bitmap imageView;
     private RecyclerView recyclerView;
     MessagesAdapterNewReservation messagesAdapterNewReservation;
 
@@ -38,12 +42,15 @@ public class NewReservationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_reservation);
         nameProfessional = getIntent().getStringExtra("nameProfessional");
         emailProfessional = getIntent().getStringExtra("email");
+        imageView = (Bitmap) getIntent().getParcelableExtra("BitmapImage");
         name = (TextView)findViewById(R.id.nameProfessional);
         email = (TextView) findViewById(R.id.email);
         address = (EditText) findViewById(R.id.address);
         numberPhone = (EditText) findViewById(R.id.numberPhone);
         reserve = (Button) findViewById(R.id.reserve);
         cost = (TextView) findViewById(R.id.total);
+        image = (ImageView)findViewById(R.id.circleView);
+        image.setImageBitmap(imageView);
         name.setText(nameProfessional);
         email.setText(emailProfessional);
          messagesAdapterNewReservation = new MessagesAdapterNewReservation(this,cost);
