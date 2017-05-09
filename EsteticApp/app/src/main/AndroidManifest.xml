@@ -67,6 +67,14 @@
                 android:value=".activities.client.MainClienteActivity" />
         </activity>
 
+        <activity
+            android:name=".activities.professional.AccountProfessionalActivity"
+            android:label="My Account">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.professional.MainProfessionalActivity" />
+        </activity>
+
         <activity android:name=".activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

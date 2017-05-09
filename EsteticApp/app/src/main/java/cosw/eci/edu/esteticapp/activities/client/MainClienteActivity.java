@@ -55,7 +55,7 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         hairdressing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+                SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
                 SharedPreferences.Editor editor = mPrefs.edit();
                 editor.putString("service", "Hairdressing");
                 editor.commit();
@@ -66,7 +66,7 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         manicure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+                SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
                 SharedPreferences.Editor editor = mPrefs.edit();
                 editor.putString("service", "Manicure");
                 editor.commit();
@@ -77,7 +77,7 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         massage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+                SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
                 SharedPreferences.Editor editor = mPrefs.edit();
                 editor.putString("service", "Massage");
                 editor.commit();
@@ -88,7 +88,7 @@ public class MainClienteActivity extends AppCompatActivity implements Navigation
         depilation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+                SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
                 SharedPreferences.Editor editor = mPrefs.edit();
                 editor.putString("service", "Depilation");
                 editor.commit();

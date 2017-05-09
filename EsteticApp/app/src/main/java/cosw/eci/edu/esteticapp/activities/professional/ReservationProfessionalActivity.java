@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
-import cosw.eci.edu.esteticapp.activities.client.MainClienteActivity;
 import cosw.eci.edu.esteticapp.services.MessagesAdapterReservations;
 import cosw.eci.edu.esteticapp.services.Reservation;
 
@@ -78,7 +77,7 @@ public class ReservationProfessionalActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                        Intent intent = new Intent(getApplicationContext(), MainClienteActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MainProfessionalActivity.class);
                         startActivityForResult(intent, REQUEST_SIGNUP);
                         return true;
                 }

@@ -36,7 +36,7 @@ public class MessagesAdapterNewReservation extends RecyclerView.Adapter<Messages
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType )
     {
-        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_new_reserve, parent, false );
+        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_new_reserve_client, parent, false );
         return new ViewHolder( view );
     }
 

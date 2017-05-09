@@ -2,13 +2,17 @@ package cosw.eci.edu.esteticapp.activities.professional;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import cosw.eci.edu.esteticapp.R;
 
@@ -23,6 +27,8 @@ public class AccountProfessionalActivity extends AppCompatActivity {
     private String emailR;
     private String passwordR;
     private Button save;
+    private ImageView imageView;
+    private Bitmap photo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,7 @@ public class AccountProfessionalActivity extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
         name = (EditText)findViewById(R.id.name);
         save = (Button)findViewById(R.id.save);
+        imageView = (ImageView)findViewById(R.id.circleView);
         save.setVisibility(Button.INVISIBLE);
         modified = 0;
         SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
@@ -42,6 +49,13 @@ public class AccountProfessionalActivity extends AppCompatActivity {
         email.setText(emailR);
         password.setText(passwordR);
         buttonModified();
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                startActivityForResult(intent,1);
+            }
+        });
     }
 
     private void buttonModified() {
@@ -108,5 +122,28 @@ public class AccountProfessionalActivity extends AppCompatActivity {
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 0 && resultCode == RESULT_OK) {
+            if (data != null) {
+
+                photo = (Bitmap) data.getExtras().get("data");
+                imageView.setImageBitmap(photo);
+
+                Log.d("camera ---- > ", "" + data.getExtras().get("data"));
+            }
+        } else if (requestCode == 1 && resultCode == RESULT_OK) {
+            if (data != null) {
+
+                photo = (Bitmap) data.getExtras().get("data");
+                imageView.setImageBitmap(photo);
+
+                Log.d("camera ---- > ", "" + data.getExtras().get("data"));
+            }
+        }
     }
 }

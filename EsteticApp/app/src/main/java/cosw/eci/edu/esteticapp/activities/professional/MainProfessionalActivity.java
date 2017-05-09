@@ -17,8 +17,6 @@ import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
 import cosw.eci.edu.esteticapp.activities.LoginActivity;
-import cosw.eci.edu.esteticapp.activities.client.ReservationClientActivity;
-import cosw.eci.edu.esteticapp.activities.client.AccountClientActivity;
 
 public class MainProfessionalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private static final int REQUEST_SIGNUP = 0;
@@ -113,10 +111,10 @@ public class MainProfessionalActivity extends AppCompatActivity implements Navig
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_reservation) {
-            Intent intent = new Intent(getApplicationContext(), ReservationClientActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ReservationProfessionalActivity.class);
             startActivityForResult(intent, REQUEST_SIGNUP);
         } else if (id == R.id.nav_account) {
-            Intent intent = new Intent(getApplicationContext(), AccountClientActivity.class);
+            Intent intent = new Intent(getApplicationContext(), AccountProfessionalActivity.class);
             intent.putExtra("name",name);
             intent.putExtra("email",email);
             startActivityForResult(intent, REQUEST_SIGNUP);

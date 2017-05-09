@@ -3,6 +3,9 @@ package cosw.eci.edu.esteticapp.services;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +13,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cosw.eci.edu.esteticapp.R;
+import cosw.eci.edu.esteticapp.activities.client.NewReservationActivity;
 
 /**
  * Created by USUARIO on 25/04/2017.
@@ -37,7 +39,7 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType )
     {
-        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_reservations, parent, false );
+        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_reservations_client, parent, false );
         return new ViewHolder( view );
     }
 
@@ -50,11 +52,13 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
         viewHolder.state.setText(reservation.getState());
         viewHolder.price.setText(reservation.getPrice());
         viewHolder.date.setText(reservation.getDate());
+        viewHolder.imageView.setImageBitmap(reservation.getImageUrl());
         viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                TextView name = (TextView) v.findViewById(R.id.nameProfessional);
-                TextView state = (TextView)v.findViewById(R.id.state_reservations);
+                final TextView name = (TextView) v.findViewById(R.id.nameProfessional);
+                final TextView state = (TextView)v.findViewById(R.id.state_reservations);
+                final  ImageView imageView = (ImageView)v.findViewById(R.id.circleView);
                 new AlertDialog.Builder(context)
                         .setTitle(name.getText().toString())
                         .setMessage("The reservation is:"+state.getText().toString())
@@ -65,12 +69,20 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
                         })
                         .setNeutralButton("Modify",new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-
+                                Intent intent = new Intent(context, NewReservationActivity.class);
+                                intent.putExtra("nameProfessional",name.getText().toString());
+                                intent.putExtra("email",name.getText().toString()+"@mail.com");
+                                intent.putExtra("services","");
+                                imageView.buildDrawingCache();
+                                Bitmap image= imageView.getDrawingCache();
+                                intent.putExtra("BitmapImage",image);
+                                context.startActivity(intent);
                             }
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-
+                                state.setText("Cancel");
+                                state.setTextColor(Color.RED);
                             }
                         })
                         .setIcon(android.R.drawable.ic_dialog_alert)
@@ -79,10 +91,10 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
         });
         if ( reservation.getImageUrl() != null )
         {
-            viewHolder.name.setVisibility( View.GONE );
-            viewHolder.services.setVisibility( View.GONE );
+            viewHolder.name.setVisibility( View.VISIBLE );
+            viewHolder.services.setVisibility( View.VISIBLE );
             viewHolder.imageView.setVisibility( View.VISIBLE );
-            Picasso.with( context ).load( reservation.getImageUrl() ).into( viewHolder.imageView );
+            //Picasso.with( context ).load( reservation.getImageUrl() ).into( viewHolder.imageView );
         }
         else
         {

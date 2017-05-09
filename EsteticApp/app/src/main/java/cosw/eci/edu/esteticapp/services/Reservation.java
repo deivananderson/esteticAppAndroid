@@ -1,5 +1,7 @@
 package cosw.eci.edu.esteticapp.services;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by USUARIO on 26/04/2017.
  */
@@ -11,7 +13,7 @@ public class Reservation {
     private String date;
     private String price;
     private String state;
-    private String imageUrl;
+    private Bitmap imageUrl;
 
     public Reservation(String professional, String services, String date, String price, String state) {
         this.professional = professional;
@@ -21,7 +23,7 @@ public class Reservation {
         this.state = state;
     }
 
-    public Reservation(String imageUrl) {
+    public Reservation(Bitmap imageUrl) {
         this.imageUrl = imageUrl;
     }
 
@@ -65,7 +67,11 @@ public class Reservation {
         this.state = state;
     }
 
-    public String getImageUrl() {return imageUrl;}
+    public Bitmap getImageUrl() {return imageUrl;}
+
+    public void setImageUrl(Bitmap imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     @Override
     public int hashCode() {return super.hashCode();}

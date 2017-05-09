@@ -30,7 +30,7 @@ public class Services_client_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services_client_);
-        SharedPreferences mPrefs = getSharedPreferences("esteticapp.cliente", 123);
+        SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential",123);
         service =  mPrefs.getString("service", "");
         mTextMessage = (TextView) findViewById(R.id.message);
         mTextMessage.setText(service);
@@ -73,6 +73,16 @@ public class Services_client_Activity extends AppCompatActivity {
         p8.setImageUrl(bm8);
         p9.setImageUrl(bm9);
         p10.setImageUrl(bm10);
+        bm1=null;
+        bm2=null;
+        bm3=null;
+        bm4=null;
+        bm5=null;
+        bm6=null;
+        bm7=null;
+        bm8=null;
+        bm9=null;
+        bm10=null;
         messagesAdapterServices.addMessage(p1);
         messagesAdapterServices.addMessage(p2);
         messagesAdapterServices.addMessage(p3);

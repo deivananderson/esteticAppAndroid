@@ -36,7 +36,7 @@ public class MessagesAdapterServices extends RecyclerView.Adapter<MessagesAdapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType )
     {
-        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_servicios, parent, false );
+        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_servicices_client, parent, false );
         return new ViewHolder( view );
     }
 
