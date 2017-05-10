@@ -1,6 +1,7 @@
 package cosw.eci.edu.esteticapp.services;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +55,7 @@ public class MessagesAdapterNewReservation extends RecyclerView.Adapter<Messages
                 View row = (View) v.findViewById(R.id.row);
                 if(!status.getText().toString().equals(">")){
                     status.setText(">");
-                    row.setBackgroundColor(0xFF00FF00);
+                    row.setBackgroundColor(Color.parseColor("#61d698"));
                     textView = (TextView)v.findViewById(R.id.price);
                     int value = Integer.parseInt(textView.getText().toString());
                     acount = Integer.parseInt(cost.getText().toString());

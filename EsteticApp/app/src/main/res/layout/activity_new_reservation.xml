@@ -8,206 +8,246 @@
     android:orientation="vertical"
     tools:context="cosw.eci.edu.esteticapp.activities.client.NewReservationActivity">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_below="@+id/imageView"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/cliente" />
-
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/cliente" />
+
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.09"
-                    android:gravity="left"
-                    android:text="Name:  "
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/nameProfessional"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Name professional" />
-
-                <RatingBar
-                    android:id="@+id/ratingBar"
-                    style="?android:attr/ratingBarStyleSmall"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:numStars="5"
-                    android:progressTint="@color/primary"
-                    android:rating="3" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.09"
+                        android:gravity="left"
+                        android:text="Name:  "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nameProfessional"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Name professional" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.09"
+                        android:text="    " />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:numStars="5"
+                        android:rating="3.5"
+                        android:theme="@style/RatingBar" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.06"
+                        android:gravity="left"
+                        android:text="Email:  "
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Email professional" />
+                </LinearLayout>
+
             </LinearLayout>
 
-            <LinearLayout
+            <Space
                 android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/text_new_reserve"
+                android:textColor="@color/colorAccent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/customborder">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="300dp"
+                    android:layout_height="140dp"
+                    android:focusable="false"
+                    android:scrollbars="vertical" />
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.06"
-                    android:gravity="left"
-                    android:text="Email:  "
+                    android:layout_weight="4.52"
+                    android:text="Total"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    tools:text="Total" />
+
+                <TextView
+                    android:id="@+id/badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/email"
+                    android:id="@+id/total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Email professional" />
+                    android:layout_weight="0.42"
+                    android:gravity="right"
+                    android:text="500000"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
-        </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5dp" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/messaje_new_service"
+                android:textColor="@color/colorAccent" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/text_new_reserve"
-            android:textColor="@color/colorAccent" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp" />
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@drawable/customborder">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view"
+            <LinearLayout
                 android:layout_width="300dp"
-                android:layout_height="140dp"
-                android:focusable="false"
-                android:scrollbars="vertical" />
-        </android.support.constraint.ConstraintLayout>
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
-        <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+                <Button
+                    android:id="@+id/serchDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="Select"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorButton"
+                    android:textStyle="bold"
+                    android:layout_weight="0.20"
+                    android:onClick="setDate"/>
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/date"
+                    style="@style/Widget.AppCompat.AutoCompleteTextView"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:hint="Date"
+                    android:gravity="center"
+                    android:layout_weight="0.42" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4.52"
-                android:text="Total"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
-                android:textStyle="italic"
-                tools:text="Total" />
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Address"
+                android:inputType="textPostalAddress"
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/badge"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/numberPhone"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="$" />
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Number phone "
+                android:inputType="phone"
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/total"
-                android:layout_width="wrap_content"
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <Button
+                android:id="@+id/reserve"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.42"
-                android:gravity="right"
-                android:text="500000"
-                android:textColor="@color/colorAccent"
-                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimary"
+                android:onClick="reserve"
+                android:text="Reserve"
+                android:textColor="@color/colorButton"
                 android:textStyle="bold" />
+
         </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/messaje_new_service"
-            android:textColor="@color/colorAccent" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:hint="Address"
-            android:inputType="textPostalAddress"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/numberPhone"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:hint="Number phone "
-            android:inputType="phone"
-            android:textSize="16sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5dp" />
-
-        <Button
-            android:id="@+id/reserve"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/colorPrimary"
-            android:onClick="reserve"
-            android:text="Reserve"
-            android:textColor="@color/colorButton"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="70dp"
     android:padding="6dip">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -53,7 +53,7 @@
             <TextView
                 android:id="@+id/state_reservations"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="24dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/icon"
@@ -95,10 +95,10 @@
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/icon"
                 android:ellipsize="marquee"
+                android:gravity="right"
                 android:maxLines="1"
                 android:paddingLeft="10dp"
                 android:text="Description"
-                android:gravity="right"
                 android:textSize="12sp" />
         </LinearLayout>
 

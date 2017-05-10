@@ -50,8 +50,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:numStars="5"
-                    android:progressTint="@color/primary"
-                    android:rating="3" />
+                    android:rating="3.5"
+                    android:theme="@style/RatingBar"/>
 
             </LinearLayout>
 
