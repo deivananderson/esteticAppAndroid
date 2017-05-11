@@ -1,6 +1,8 @@
 package cosw.eci.edu.esteticapp.services;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +44,34 @@ public class MessagesAdapterServicesProfessional extends RecyclerView.Adapter<Me
         viewHolder.name.setText( service.getName() );
         viewHolder.description.setText( service.getDescription() );
         viewHolder.price.setText(service.getPrice());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                final TextView name = (TextView) v.findViewById(R.id.nameService);
+                final TextView descripction = (TextView)v.findViewById(R.id.descripction);
+                final TextView price = (TextView)v.findViewById(R.id.price);
+                new AlertDialog.Builder(context)
+                        .setTitle(name.getText().toString())
+                        .setMessage("Selecto one the option:")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setNeutralButton("Modify",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                            }
+                        })
+                        .setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+            }
+        });
         viewHolder.name.setVisibility( View.VISIBLE );
         viewHolder.description.setVisibility( View.VISIBLE );
         viewHolder.price.setVisibility( View.VISIBLE );
