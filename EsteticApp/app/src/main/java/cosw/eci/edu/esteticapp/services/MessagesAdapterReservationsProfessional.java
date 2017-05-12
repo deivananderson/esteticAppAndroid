@@ -25,13 +25,13 @@ import cosw.eci.edu.esteticapp.activities.client.NewReservationActivity;
  * Created by USUARIO on 25/04/2017.
  */
 
-public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAdapterReservations.ViewHolder> {
+public class MessagesAdapterReservationsProfessional extends RecyclerView.Adapter<MessagesAdapterReservationsProfessional.ViewHolder> {
 
     private final Context context;
 
     private List<Reservation> reservations = new ArrayList<>();
 
-    public MessagesAdapterReservations(Context context )
+    public MessagesAdapterReservationsProfessional(Context context )
     {
         this.context = context;
     }
@@ -39,7 +39,7 @@ public class MessagesAdapterReservations extends RecyclerView.Adapter<MessagesAd
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType )
     {
-        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_reservations_client, parent, false );
+        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.recyclerview_reservations_professional, parent, false );
         return new ViewHolder( view );
     }
 

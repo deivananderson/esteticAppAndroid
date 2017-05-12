@@ -23,12 +23,12 @@ import cosw.eci.edu.esteticapp.activities.client.NewReservationActivity;
  * Created by USUARIO on 25/04/2017.
  */
 
-public class MessagesAdapterServices extends RecyclerView.Adapter<MessagesAdapterServices.ViewHolder> {
+public class MessagesAdapterServicesClient extends RecyclerView.Adapter<MessagesAdapterServicesClient.ViewHolder> {
 
     private static final int REQUEST_SIGNUP = 0;
     private final Context context;
     private List<Professional> professionals = new ArrayList<>();
-    public MessagesAdapterServices(Context context )
+    public MessagesAdapterServicesClient(Context context )
     {
         this.context = context;
     }

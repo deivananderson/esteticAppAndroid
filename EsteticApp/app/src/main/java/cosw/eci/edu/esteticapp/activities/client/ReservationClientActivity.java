@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
-import cosw.eci.edu.esteticapp.services.MessagesAdapterReservations;
+import cosw.eci.edu.esteticapp.services.MessagesAdapterReservationsClient;
 import cosw.eci.edu.esteticapp.services.Reservation;
 
 public class ReservationClientActivity extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class ReservationClientActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
     private RecyclerView recyclerView;
-    MessagesAdapterReservations messagesAdapterServices = new MessagesAdapterReservations(this);
+    MessagesAdapterReservationsClient messagesAdapterServices = new MessagesAdapterReservationsClient(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,7 @@ public class ReservationClientActivity extends AppCompatActivity {
 
 
     private void configureRecyclerView() {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_reservation_client);
         recyclerView.setHasFixedSize( true );
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager( this );
         linearLayoutManager.setReverseLayout( true );

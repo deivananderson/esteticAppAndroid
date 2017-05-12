@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
-import cosw.eci.edu.esteticapp.services.MessagesAdapterReservations;
+import cosw.eci.edu.esteticapp.services.MessagesAdapterReservationsProfessional;
 import cosw.eci.edu.esteticapp.services.Reservation;
 
 public class ReservationProfessionalActivity extends AppCompatActivity {
@@ -22,12 +22,12 @@ public class ReservationProfessionalActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
     private RecyclerView recyclerView;
-    MessagesAdapterReservations messagesAdapterServices = new MessagesAdapterReservations(this);
+    MessagesAdapterReservationsProfessional messagesAdapterReservations = new MessagesAdapterReservationsProfessional(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reservation_client);
+        setContentView(R.layout.activity_reservation_professional);
         mTextMessage = (TextView) findViewById(R.id.message);
         buttonTop();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -67,27 +67,27 @@ public class ReservationProfessionalActivity extends AppCompatActivity {
         r8.setImageUrl(bm6);
         r9.setImageUrl(bm10);
         r10.setImageUrl(bm10);
-        messagesAdapterServices.addMessage(r1);
-        messagesAdapterServices.addMessage(r2);
-        messagesAdapterServices.addMessage(r3);
-        messagesAdapterServices.addMessage(r4);
-        messagesAdapterServices.addMessage(r5);
-        messagesAdapterServices.addMessage(r6);
-        messagesAdapterServices.addMessage(r7);
-        messagesAdapterServices.addMessage(r8);
-        messagesAdapterServices.addMessage(r9);
-        messagesAdapterServices.addMessage(r10);
+        messagesAdapterReservations.addMessage(r1);
+        messagesAdapterReservations.addMessage(r2);
+        messagesAdapterReservations.addMessage(r3);
+        messagesAdapterReservations.addMessage(r4);
+        messagesAdapterReservations.addMessage(r5);
+        messagesAdapterReservations.addMessage(r6);
+        messagesAdapterReservations.addMessage(r7);
+        messagesAdapterReservations.addMessage(r8);
+        messagesAdapterReservations.addMessage(r9);
+        messagesAdapterReservations.addMessage(r10);
 
     }
 
 
     private void configureRecyclerView() {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_reservation_professional);
         recyclerView.setHasFixedSize( true );
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager( this );
         linearLayoutManager.setReverseLayout( true );
         recyclerView.setLayoutManager( linearLayoutManager );
-        recyclerView.setAdapter(messagesAdapterServices);
+        recyclerView.setAdapter(messagesAdapterReservations);
     }
 
     /**

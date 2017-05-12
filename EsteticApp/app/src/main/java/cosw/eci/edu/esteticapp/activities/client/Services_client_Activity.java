@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import cosw.eci.edu.esteticapp.R;
-import cosw.eci.edu.esteticapp.services.MessagesAdapterServices;
+import cosw.eci.edu.esteticapp.services.MessagesAdapterServicesClient;
 import cosw.eci.edu.esteticapp.services.Professional;
 
 public class Services_client_Activity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class Services_client_Activity extends AppCompatActivity {
     private String service;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
     private RecyclerView recyclerView;
-    MessagesAdapterServices messagesAdapterServices = new MessagesAdapterServices(this);
+    MessagesAdapterServicesClient messagesAdapterServices = new MessagesAdapterServicesClient(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
