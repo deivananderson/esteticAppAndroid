@@ -50,6 +50,8 @@ public class Services_professional_Activity extends AppCompatActivity {
         Service s6 = new Service("Tintura","$15000","Tintes");
         Service s7 = new Service("Alizado","$13000","liso");
         Service s8 = new Service("Peinado 15","$33000","especial");
+        Service s9 = new Service("Corta aunas","$13000","liso");
+        Service s10 = new Service("Peinado 30","$33000","especial");
         messagesAdapterServicesProfessional.addMessage(s1);
         messagesAdapterServicesProfessional.addMessage(s2);
         messagesAdapterServicesProfessional.addMessage(s3);
@@ -58,6 +60,8 @@ public class Services_professional_Activity extends AppCompatActivity {
         messagesAdapterServicesProfessional.addMessage(s6);
         messagesAdapterServicesProfessional.addMessage(s7);
         messagesAdapterServicesProfessional.addMessage(s8);
+        messagesAdapterServicesProfessional.addMessage(s9);
+        messagesAdapterServicesProfessional.addMessage(s10);
     }
 
 }

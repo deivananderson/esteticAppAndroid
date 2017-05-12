@@ -110,21 +110,27 @@ public class MainProfessionalActivity extends AppCompatActivity implements Navig
 
         if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_reservation) {
+        }else if (id == R.id.nav_reservation) {
             Intent intent = new Intent(getApplicationContext(), ReservationProfessionalActivity.class);
             startActivityForResult(intent, REQUEST_SIGNUP);
-        } else if (id == R.id.nav_account) {
+        }else if (id == R.id.nav_account) {
             Intent intent = new Intent(getApplicationContext(), AccountProfessionalActivity.class);
             intent.putExtra("name",name);
             intent.putExtra("email",email);
             startActivityForResult(intent, REQUEST_SIGNUP);
-        }  else if (id == R.id.nav_logout) {
+        }else if (id == R.id.nav_logout) {
             SharedPreferences mPrefs = getSharedPreferences("esteticapp.login.credential", 123);
             SharedPreferences.Editor editor = mPrefs.edit();
             editor.putString("email", "");
             editor.putString("rol", "");
             editor.commit();
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivityForResult(intent, REQUEST_SIGNUP);
+        }else if (id == R.id.nav_sales) {
+            Intent intent = new Intent(getApplicationContext(), SalesProfessionalActivity.class);
+            startActivityForResult(intent, REQUEST_SIGNUP);
+        }else if (id == R.id.nav_calendar) {
+            Intent intent = new Intent(getApplicationContext(), CalendarProfessionalActivity.class);
             startActivityForResult(intent, REQUEST_SIGNUP);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

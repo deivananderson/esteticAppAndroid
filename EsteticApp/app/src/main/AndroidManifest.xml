@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cosw.eci.edu.esteticapp">
 
+    <uses-sdk android:minSdkVersion="14" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/launcher"
@@ -9,12 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".activities.LoginActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.client.RegisterClientActivity"
             android:label="Client">
@@ -22,7 +23,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.LoginActivity" />
         </activity>
-
         <activity
             android:name=".activities.professional.RegisterProfessionalActivity"
             android:label="Professional">
@@ -30,19 +30,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.LoginActivity" />
         </activity>
-
         <activity
             android:name=".activities.professional.MainProfessionalActivity"
             android:label="Home"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.client.MainClienteActivity"
             android:label="Home"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.client.Services_client_Activity"
             android:label="Services">
@@ -50,7 +45,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.client.MainClienteActivity" />
         </activity>
-
         <activity
             android:name=".activities.client.ReservationClientActivity"
             android:label="Reservations">
@@ -58,7 +52,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.client.MainClienteActivity" />
         </activity>
-
         <activity
             android:name=".activities.client.AccountClientActivity"
             android:label="My Account">
@@ -66,7 +59,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.client.MainClienteActivity" />
         </activity>
-
         <activity
             android:name=".activities.professional.AccountProfessionalActivity"
             android:label="My Account">
@@ -74,7 +66,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.professional.MainProfessionalActivity" />
         </activity>
-
         <activity android:name=".activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -82,7 +73,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.client.NewReservationActivity"
             android:label="New reservation">
@@ -90,7 +80,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.client.Services_client_Activity" />
         </activity>
-
         <activity
             android:name=".activities.professional.Services_professional_Activity"
             android:label="My services">
@@ -99,7 +88,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.professional.MainProfessionalActivity" />
         </activity>
-
         <activity
             android:name=".activities.professional.ReservationProfessionalActivity"
             android:label="Reservations">
@@ -107,7 +95,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.professional.MainProfessionalActivity" />
         </activity>
-
         <activity
             android:name=".activities.professional.AddServicesActivity"
             android:label="Add Service">
@@ -115,7 +102,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.professional.Services_professional_Activity" />
         </activity>
-
         <activity
             android:name=".activities.professional.AddServiceSelectedActivity"
             android:label="Select Services"
@@ -123,6 +109,20 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.professional.AddServicesActivity" />
+        </activity>
+        <activity
+            android:name=".activities.professional.SalesProfessionalActivity"
+            android:label="My Sales">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.professional.MainProfessionalActivity" />
+        </activity>
+        <activity
+            android:name=".activities.professional.CalendarProfessionalActivity"
+            android:label="My Calendar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.professional.MainProfessionalActivity" />
         </activity>
     </application>
 

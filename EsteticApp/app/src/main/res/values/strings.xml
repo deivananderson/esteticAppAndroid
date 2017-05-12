@@ -27,4 +27,5 @@
     <string name="text_new_reserve">What services do you want to reserve?</string>
     <string name="messaje_new_service">Enter reservation data</string>
     <string name="title_activity_add_service_selected">AddServiceSelectedActivity</string>
+    <string name="messageNewService">Select the services that you lend, in the following list.</string>
 </resources>

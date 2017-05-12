@@ -1,10 +1,15 @@
 package cosw.eci.edu.esteticapp.services;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,6 +27,7 @@ public class MessagesAdapterServiceSelected extends RecyclerView.Adapter<Message
 
     private static final int REQUEST_SIGNUP = 0;
     private final Context context;
+    private String m_Text = "";
     private List<Service> services = new ArrayList<>();
     public MessagesAdapterServiceSelected(Context context )
     {
@@ -42,6 +48,50 @@ public class MessagesAdapterServiceSelected extends RecyclerView.Adapter<Message
         viewHolder.name.setText( service.getName() );
         viewHolder.description.setText( service.getDescription() );
         viewHolder.price.setText(service.getPrice());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                TextView status = (TextView)v.findViewById(R.id.status);
+                final TextView price = (TextView)v.findViewById(R.id.price);
+                TextView textView;
+                View row = (View) v.findViewById(R.id.row);
+                if(!status.getText().toString().equals(">")){
+                    status.setText(">");
+                    row.setBackgroundColor(Color.parseColor("#61d698"));
+
+                    /*Alert update price new service*/
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("New service");
+                    builder.setMessage("Set price of the service");
+                    final EditText input = new EditText(context);
+                    input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    builder.setView(input);
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            m_Text = input.getText().toString();
+                            price.setText("$"+m_Text);
+                        }
+                    });
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            price.setText("$0.00");
+                        }
+                    });
+
+                    builder.show();
+                }else {
+                    row.setBackgroundColor(0x00000000);
+                    price.setText("$0.00");
+                    status.setText("");
+                }
+
+            }
+        });
+
+
         viewHolder.name.setVisibility( View.VISIBLE );
         viewHolder.description.setVisibility( View.VISIBLE );
         viewHolder.price.setVisibility( View.VISIBLE );

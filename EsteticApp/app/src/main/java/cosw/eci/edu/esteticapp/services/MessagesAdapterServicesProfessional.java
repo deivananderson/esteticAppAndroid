@@ -4,9 +4,11 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -38,9 +40,9 @@ public class MessagesAdapterServicesProfessional extends RecyclerView.Adapter<Me
     }
 
     @Override
-    public void onBindViewHolder( ViewHolder viewHolder, int position )
+    public void onBindViewHolder(ViewHolder viewHolder, final int position )
     {
-        Service service = services.get( position );
+        final Service service = services.get( position );
         viewHolder.name.setText( service.getName() );
         viewHolder.description.setText( service.getDescription() );
         viewHolder.price.setText(service.getPrice());
@@ -58,14 +60,35 @@ public class MessagesAdapterServicesProfessional extends RecyclerView.Adapter<Me
 
                             }
                         })
-                        .setNeutralButton("Modify",new DialogInterface.OnClickListener() {
+                        .setNeutralButton("Update",new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                /*Alert update price new service*/
+                                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                                builder.setTitle("Update a service");
+                                builder.setMessage("Set price of the service");
+                                final EditText input = new EditText(context);
+                                input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                                builder.setView(input);
+                                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        price.setText("$"+input.getText().toString());
+                                    }
+                                });
+                                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                });
 
+                                builder.show();
                             }
                         })
                         .setNegativeButton("Delete", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-
+                                services.remove(position);
+                                notifyDataSetChanged();
                             }
                         })
                         .setIcon(android.R.drawable.ic_dialog_alert)

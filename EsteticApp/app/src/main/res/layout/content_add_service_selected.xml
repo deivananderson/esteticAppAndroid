@@ -10,11 +10,11 @@
 
 
     <LinearLayout
-        android:layout_width="368dp"
+        android:layout_width="344dp"
         android:layout_height="495dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <Space
             android:layout_width="match_parent"
@@ -36,18 +36,65 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/messageNewService"
+            android:textColor="@color/colorAccent" />
+
         <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="320dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:background="@drawable/customborder">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
-                android:layout_width="352dp"
-                android:layout_height="415dp"
+                android:layout_width="280dp"
+                android:layout_height="194dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
                 android:focusable="false"
                 android:scrollbars="vertical"
-                tools:layout_editor_absoluteX="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 tools:layout_editor_absoluteY="8dp" />
         </android.support.constraint.ConstraintLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:text="You must save the created services."
+            android:layout_gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="If you want to add more services, ask for them in the +"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/saveService"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:text="Save"
+            android:textColor="@color/colorButton"
+            android:textStyle="bold"
+            android:onClick="saveServices"/>
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
